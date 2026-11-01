@@ -235,11 +235,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792242679,
-        "narHash": "sha256-NsfwF5aD6sItRmCHSyGmanaj7hmK0Jibf4u14HbN0Aw=",
+        "lastModified": 1793531000,
+        "narHash": "sha256-6cUqFCWQj3x/idj31EGr4gAoRG7y8RTUQBXxIwZ1kww=",
         "ref": "refs/heads/main",
-        "rev": "90333c193a8fb69162ed85aa94b0de94d5382340",
-        "revCount": 15,
+        "rev": "09772e86d109b44ca6f43edc37d25c2b84d29c4e",
+        "revCount": 16,
         "type": "git",
         "url": "https://github.com/slopinger/mayfly.git"
       },
