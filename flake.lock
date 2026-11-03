@@ -553,11 +553,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793737526,
-        "narHash": "sha256-lo3iRk2SV2j6FjPMw6zBkNorF/cXSUpCVpseegwOEhQ=",
+        "lastModified": 1793738478,
+        "narHash": "sha256-Dt9IM/CVIF6YY2mwj++roi5MtVFN0EaWS6VQsEGp8T8=",
         "ref": "refs/heads/main",
-        "rev": "84ce61fe4bafe551f5e6bdfe115db90b5c55edeb",
-        "revCount": 3,
+        "rev": "00cc461fdf21f3dcd3ab5cd1beecce20e0435300",
+        "revCount": 4,
         "type": "git",
         "url": "https://github.com/slopmaxxer/slopcord.git"
       },
