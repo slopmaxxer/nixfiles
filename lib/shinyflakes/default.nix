@@ -7,7 +7,7 @@
   genColmenaCfg = name: host: {
     deployment = {
       allowLocalDeployment = true;
-      buildOnTarget = true;
+      buildOnTarget = host.config.freifick.deployment.buildOnTarget;
       targetHost = lib.findFirst (el: el != null) host.config.networking.fqdnOrHostName
         [ host.config.freifick.deployment.targetHost ];
       targetPort = 22;
@@ -20,7 +20,9 @@
 
   genNixosCfg = {
     hostname,
-    system ? "x86_64-linux"
+    system ? "x86_64-linux",
+    # Set to cross-compile the host (e.g. an armv7l board built on x86_64).
+    buildSystem ? null
   }:
   lib.nixosSystem {
     specialArgs = { inherit inputs; };
@@ -29,6 +31,9 @@
       ({ ... }: {
         nixpkgs.overlays = [ self.overlays.freifick ];
         nixpkgs.hostPlatform.system = system;
+      })
+      ({ ... }: lib.optionalAttrs (buildSystem != null) {
+        nixpkgs.buildPlatform.system = buildSystem;
       })
     ];
   };
