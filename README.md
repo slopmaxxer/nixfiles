@@ -5,8 +5,9 @@ Proxmox/QEMU UEFI VM with a single disk,
 `/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi1` (refer to it by id; `sdX` names
 are not stable). It replaced an Arch Linux install in October 2026 (see the end).
 
-Source: https://github.com/slopinger/nixfiles. Application flake inputs are
-fetched from https://github.com/slopinger.
+Source: https://github.com/slopmaxxer/nixfiles. Application flake inputs are
+fetched from https://github.com/slopmaxxer (the `slopinger` account's repositories
+are not publicly visible while its GitHub flag is under review).
 
 ## Host configuration (`config/hosts/slopbox`)
 

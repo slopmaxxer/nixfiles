@@ -1,5 +1,5 @@
 # Dev instance of our Hydra fork at https://hydra.freifick.net (hydra-server on 127.0.0.1:3000).
-# Source: https://github.com/slopinger/hydra (flake input `hydra`). Its package is used with the
+# Source: https://github.com/slopmaxxer/hydra (flake input `hydra`). Its package is used with the
 # fork's own lock (no `follows`), so the store paths match the builds of the
 # hydra.kyouma.net jobset slopinger-hydra:main and come from cache.kyouma.net (common/nix.nix).
 # Admin: `hydractl hydra-create-user …`; slop's admin password is ~/.secrets/hydra/admin-password.

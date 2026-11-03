@@ -1,5 +1,5 @@
 # trough ActivityPub server at https://fedi.freifick.net (loopback 127.0.0.1:8790).
-# Source: https://github.com/slopinger/trough (flake input `trough`).
+# Source: https://github.com/slopmaxxer/trough (flake input `trough`).
 { inputs, lib, pkgs, config, ... }: let
   cfg = config.services.trough;
   # Admin commands as the service user with the service's settings, e.g. `troughctl user list`.

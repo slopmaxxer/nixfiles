@@ -84,7 +84,7 @@
     home.file.".ssh/allowed_signers".text = ''
       slopmoder@tutamail.com namespaces="git" ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOTofPAGRTdGiTl7oeIWupx4euhHVkR3TyPsECnq2fWJ
     '';
-    # Hydra instances for the `hydra` MCP server (github.com/slopinger/hydra-mcp). Only paths to
+    # Hydra instances for the `hydra` MCP server (github.com/slopmaxxer/hydra-mcp). Only paths to
     # the password files here; hydra-mcp reads them at login.
     xdg.configFile."hydra-mcp/config.toml".text = ''
       default = "kyouma"

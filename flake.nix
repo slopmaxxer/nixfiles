@@ -63,42 +63,42 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     trough = {
-      url = "git+https://github.com/slopinger/trough.git";
+      url = "git+https://github.com/slopmaxxer/trough.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     mayfly = {
-      url = "git+https://github.com/slopinger/mayfly.git";
+      url = "git+https://github.com/slopmaxxer/mayfly.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     dn42 = {
-      url = "git+https://github.com/slopinger/dn42.git";
+      url = "git+https://github.com/slopmaxxer/dn42.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     driftline = {
-      url = "git+https://github.com/slopinger/driftline.git";
+      url = "git+https://github.com/slopmaxxer/driftline.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     server-backups = {
-      url = "git+https://github.com/slopinger/server-backups.git";
+      url = "git+https://github.com/slopmaxxer/server-backups.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     therapie-mcp = {
-      url = "git+https://github.com/slopinger/therapie-mcp.git";
+      url = "git+https://github.com/slopmaxxer/therapie-mcp.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     arbeitsagentur-mcp = {
-      url = "git+https://github.com/slopinger/arbeitsagentur-mcp.git";
+      url = "git+https://github.com/slopmaxxer/arbeitsagentur-mcp.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     boybrowse = {
-      url = "git+https://github.com/slopinger/boybrowse.git";
+      url = "git+https://github.com/slopmaxxer/boybrowse.git";
     };
     # Soft fork of Lix's Hydra. No `follows`: its own lock keeps store paths equal to the
     # hydra.kyouma.net builds, which cache.kyouma.net serves.
-    hydra.url = "git+https://github.com/slopinger/hydra.git";
+    hydra.url = "git+https://github.com/slopmaxxer/hydra.git";
     # freifick.net static site + slopd (guestbook/counter backend)
     slop-landing = {
-      url = "git+https://github.com/slopinger/slop-landing.git";
+      url = "git+https://github.com/slopmaxxer/slop-landing.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

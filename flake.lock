@@ -16,11 +16,11 @@
         "rev": "1d7e967b85b5b3a16c11c004fd701106e11b1564",
         "revCount": 9,
         "type": "git",
-        "url": "https://github.com/slopinger/arbeitsagentur-mcp.git"
+        "url": "https://github.com/slopmaxxer/arbeitsagentur-mcp.git"
       },
       "original": {
         "type": "git",
-        "url": "https://github.com/slopinger/arbeitsagentur-mcp.git"
+        "url": "https://github.com/slopmaxxer/arbeitsagentur-mcp.git"
       }
     },
     "boybrowse": {
@@ -34,11 +34,11 @@
         "rev": "9f4148df358bae3196434b4503e7eb5b381de1dc",
         "revCount": 2,
         "type": "git",
-        "url": "https://github.com/slopinger/boybrowse.git"
+        "url": "https://github.com/slopmaxxer/boybrowse.git"
       },
       "original": {
         "type": "git",
-        "url": "https://github.com/slopinger/boybrowse.git"
+        "url": "https://github.com/slopmaxxer/boybrowse.git"
       }
     },
     "colmena": {
@@ -97,11 +97,11 @@
         "rev": "e4ec3eb6e0182f9130b366fd4a437b7ba0837ba6",
         "revCount": 43,
         "type": "git",
-        "url": "https://github.com/slopinger/dn42.git"
+        "url": "https://github.com/slopmaxxer/dn42.git"
       },
       "original": {
         "type": "git",
-        "url": "https://github.com/slopinger/dn42.git"
+        "url": "https://github.com/slopmaxxer/dn42.git"
       }
     },
     "driftline": {
@@ -117,11 +117,11 @@
         "rev": "3e3bbb2d3a5b07f3657c1d0ff72009fa31beebc8",
         "revCount": 7,
         "type": "git",
-        "url": "https://github.com/slopinger/driftline.git"
+        "url": "https://github.com/slopmaxxer/driftline.git"
       },
       "original": {
         "type": "git",
-        "url": "https://github.com/slopinger/driftline.git"
+        "url": "https://github.com/slopmaxxer/driftline.git"
       }
     },
     "flake-compat": {
@@ -190,11 +190,11 @@
         "rev": "abcfce13ff96f7131342da203dec73c8a304aa23",
         "revCount": 4417,
         "type": "git",
-        "url": "https://github.com/slopinger/hydra.git"
+        "url": "https://github.com/slopmaxxer/hydra.git"
       },
       "original": {
         "type": "git",
-        "url": "https://github.com/slopinger/hydra.git"
+        "url": "https://github.com/slopmaxxer/hydra.git"
       }
     },
     "lix": {
@@ -241,11 +241,11 @@
         "rev": "09772e86d109b44ca6f43edc37d25c2b84d29c4e",
         "revCount": 16,
         "type": "git",
-        "url": "https://github.com/slopinger/mayfly.git"
+        "url": "https://github.com/slopmaxxer/mayfly.git"
       },
       "original": {
         "type": "git",
-        "url": "https://github.com/slopinger/mayfly.git"
+        "url": "https://github.com/slopmaxxer/mayfly.git"
       }
     },
     "nix-github-actions": {
@@ -497,11 +497,11 @@
         "rev": "8dd018d71c716c1a89960a5d32948848db39a804",
         "revCount": 9,
         "type": "git",
-        "url": "https://github.com/slopinger/server-backups.git"
+        "url": "https://github.com/slopmaxxer/server-backups.git"
       },
       "original": {
         "type": "git",
-        "url": "https://github.com/slopinger/server-backups.git"
+        "url": "https://github.com/slopmaxxer/server-backups.git"
       }
     },
     "slop-landing": {
@@ -517,11 +517,11 @@
         "rev": "4bcc95012c8355d2fa425cee0073660d6751a2f8",
         "revCount": 67,
         "type": "git",
-        "url": "https://github.com/slopinger/slop-landing.git"
+        "url": "https://github.com/slopmaxxer/slop-landing.git"
       },
       "original": {
         "type": "git",
-        "url": "https://github.com/slopinger/slop-landing.git"
+        "url": "https://github.com/slopmaxxer/slop-landing.git"
       }
     },
     "stable": {
@@ -586,11 +586,11 @@
         "rev": "d18a57287929bb7e738dc5ee54b8c6e7976ee723",
         "revCount": 11,
         "type": "git",
-        "url": "https://github.com/slopinger/therapie-mcp.git"
+        "url": "https://github.com/slopmaxxer/therapie-mcp.git"
       },
       "original": {
         "type": "git",
-        "url": "https://github.com/slopinger/therapie-mcp.git"
+        "url": "https://github.com/slopmaxxer/therapie-mcp.git"
       }
     },
     "trough": {
@@ -606,11 +606,11 @@
         "rev": "15dfa03e0cac3bb8035e54e7e01f64203e860973",
         "revCount": 192,
         "type": "git",
-        "url": "https://github.com/slopinger/trough.git"
+        "url": "https://github.com/slopmaxxer/trough.git"
       },
       "original": {
         "type": "git",
-        "url": "https://github.com/slopinger/trough.git"
+        "url": "https://github.com/slopmaxxer/trough.git"
       }
     },
     "uv2nix": {

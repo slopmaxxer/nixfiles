@@ -1,5 +1,5 @@
 # https://freifick.net: static site + slopd (guestbook/visitor counter) behind /api/*.
-# Source: https://github.com/slopinger/slop-landing (flake input `slop-landing`;
+# Source: https://github.com/slopmaxxer/slop-landing (flake input `slop-landing`;
 # `nix flake update slop-landing` to deploy a new version).
 { config, pkgs, ... }: let
   slopd = config.freifick.slopd;

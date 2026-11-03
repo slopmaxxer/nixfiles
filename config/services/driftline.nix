@@ -1,5 +1,5 @@
 # Driftline (OpenAPI migration tool) static site at https://driftline.freifick.net.
-# Source: https://github.com/slopinger/driftline; its module adds root + file_server.
+# Source: https://github.com/slopmaxxer/driftline; its module adds root + file_server.
 { inputs, lib, ... }: {
   imports = [ ./caddy.nix inputs.driftline.nixosModules.default ];
 

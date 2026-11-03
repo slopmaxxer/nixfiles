@@ -1,6 +1,6 @@
 # DN42 AS4242420125: dn42-dummy (172.22.64.129/27, fdd4:af47:dcfa::1/48), BIRD 3 with ROA
 # filtering, one WireGuard tunnel per peer, hourly ROA updates and the auto-peer daemon.
-# Source: https://github.com/slopinger/dn42 (module options in its README).
+# Source: https://github.com/slopmaxxer/dn42 (module options in its README).
 # Peers are declarative here (peers.nix); `dn42ctl add-peer` cannot write NixOS's read-only
 # /etc/systemd/network. The tunnel key /etc/wireguard/dn42.key is copied, never put in Nix.
 { inputs, pkgs, ... }: {

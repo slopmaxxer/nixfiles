@@ -1,5 +1,5 @@
 # slopbox temporary file host at https://slopbox.freifick.net (loopback 127.0.0.1:8791).
-# Source: https://github.com/slopinger/mayfly (flake input `mayfly`).
+# Source: https://github.com/slopmaxxer/mayfly (flake input `mayfly`).
 { inputs, config, ... }: let
   cfg = config.services.mayfly;
 in {
