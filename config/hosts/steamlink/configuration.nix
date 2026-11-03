@@ -1,44 +1,21 @@
-# Valve Steam Link (original 2015 model), headless, booting NixOS from a USB stick.
-# Hardware and boot chain: modules/steamlink. Install and deploy: README ("Steam Link").
-# Cross-compiled on x86_64 (flake.nix); armv7l has no binary cache, so hydra.kyouma.net
-# builds `hydraJobs.steamlink` into cache.kyouma.net.
-{ config, lib, pkgs, modulesPath, ... }: {
+# Our Valve Steam Link (original 2015 model), headless, booting NixOS from a USB stick.
+# Hardware support, kexec boot and the USB image come from the nixos-steamlink flake
+# (github:slopmaxxer/nixos-steamlink); this file is only our host setup.
+# Cross-compiled on x86_64 (flake.nix); hydra.kyouma.net builds `hydraJobs.steamlink`.
+{ lib, pkgs, inputs, ... }: {
   imports = [
-    "${modulesPath}/installer/sd-card/sd-image.nix"
-    "${modulesPath}/profiles/minimal.nix"
+    inputs.nixos-steamlink.nixosModules.default
     ../../common/networking.nix
     ../../common/openssh.nix
     ../../../modules
   ];
 
   networking.hostName = "steamlink";
-  freifick.steamlink = {
-    enable = true;
-    # sd-image writes the MBR disk ID 0x2178694e (sdImage.firmwarePartitionID); root is partition 2.
-    rootDevice = "PARTUUID=2178694e-02";
-  };
   freifick.machine-type.physical = true;
   freifick.machine-type.headless = true;
   # Never build on 512 MiB; colmena copies the closure built on the deploying machine.
   freifick.deployment.buildOnTarget = false;
   freifick.deployment.tags = [ "steamlink" ];
-
-  # USB image: FAT partition 1 (stock firmware's factory_test hook, kernels, kexec) and ext4
-  # root (grown to the whole stick on first boot).
-  image.baseName = lib.mkForce "nixos-steamlink";
-  sdImage = {
-    firmwareSize = 256;
-    populateFirmwareCommands = ''
-      ${config.freifick.steamlink.populateCmd} -c ${config.system.build.toplevel} -d ./firmware
-    '';
-    populateRootCommands = "";
-    compressImage = true;
-  };
-  # sd-image only mounts the firmware partition on demand; here it is /boot.
-  fileSystems."/boot/firmware".options = lib.mkForce [ "nofail" "noatime" "umask=0077" ];
-  # sd-image pulls in all-hardware.nix; this kernel has none of those modules or firmware.
-  hardware.enableAllHardware = lib.mkForce false;
-  hardware.enableRedistributableFirmware = false;
 
   # Ethernet (pxa168_eth) via DHCP, IPv6 via RAs. Wi-Fi: mwifiex + firmware are present;
   # add networking.wireless networks with a runtime secretsFile to use it.
@@ -76,18 +53,9 @@
     { type = "ed25519"; path = "/etc/ssh/ssh_host_ed25519_key"; }
   ];
 
-  nixpkgs.overlays = [
-    (final: prev: {
-      # nftables → libpcap → rdma-core, whose cmake cannot find Python when cross-compiling.
-      # No RDMA hardware here anyway.
-      libpcap = prev.libpcap.override { withRdma = false; };
-    })
-  ];
-
-  # Receives closures (nixos-rebuild --target-host / colmena), never builds.
+  # Receives closures (nixos-rebuild --target-host / colmena) as slop.
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
-    max-jobs = 0;
     trusted-users = [ "root" "@wheel" ];
     substituters = [ "https://cache.kyouma.net" ];
     trusted-public-keys = [ "cache.kyouma.net:Frjwu4q1rnwE/MnSTmX9yx86GNA/z3p/oElGvucLiZg=" ];
@@ -97,14 +65,8 @@
     dates = "weekly";
     options = "--delete-older-than 30d";
   };
-  # Keep nixpkgs (~200 MB) and the nixos-rebuild toolchain off the stick.
-  nixpkgs.flake.setNixPath = false;
-  nixpkgs.flake.setFlakeRegistry = false;
-  system.disableInstallerTools = true;
 
   environment.systemPackages = with pkgs; [ htop vim ];
-  documentation.enable = false;
-  programs.command-not-found.enable = false;
   i18n.defaultLocale = "C.UTF-8";
   i18n.supportedLocales = [ "C.UTF-8/UTF-8" ];
   time.timeZone = "UTC";

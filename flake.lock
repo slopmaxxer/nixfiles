@@ -285,6 +285,26 @@
         "type": "github"
       }
     },
+    "nixos-steamlink": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1793734321,
+        "narHash": "sha256-xVpm0+oYimUdXOJeqNsSnoBXqqiGCIXSPJMYYtZyDzA=",
+        "ref": "refs/heads/main",
+        "rev": "5743680c18217ee7aebbc5c9446ec9ff25965f86",
+        "revCount": 1,
+        "type": "git",
+        "url": "https://github.com/slopmaxxer/nixos-steamlink.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://github.com/slopmaxxer/nixos-steamlink.git"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1792788702,
@@ -477,6 +497,7 @@
         "home-manager": "home-manager",
         "hydra": "hydra",
         "mayfly": "mayfly",
+        "nixos-steamlink": "nixos-steamlink",
         "nixpkgs": "nixpkgs_3",
         "server-backups": "server-backups",
         "slop-landing": "slop-landing",

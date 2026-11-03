@@ -11,8 +11,10 @@ only its URLs in flake.lock (same rev/narHash); `nix flake lock` would also upda
 - slopbox has one disk, by-id `scsi-0QEMU_QEMU_HARDDISK_drive-scsi1` (`sdX` names are not
   stable). Host flake attribute and hostname are `slopbox`. See README for the layout and
   services, and its history section for the move from Arch.
-- Second host `steamlink` (Valve Steam Link, armv7l, cross-compiled; `modules/steamlink`,
-  README "Steam Link"). It is not in `checks` (too big for `nix flake check`); hydra.kyouma.net
+- Second host `steamlink` (Valve Steam Link, armv7l, cross-compiled; README "Steam Link").
+  Hardware/boot/image are the generic flake input `nixos-steamlink` (~/src/nixos-steamlink,
+  change them there); only our host setup lives in `config/hosts/steamlink`.
+  It is not in `checks` (too big for `nix flake check`); hydra.kyouma.net
   project `slop-nixfiles` builds `hydraJobs.steamlink.*`. Verify with
   `nix build .#hydraJobs.steamlink.image`. It is on the user's LAN, not reachable from slopbox.
 - Application flakes own their packages/modules. This flake pins public GitHub inputs,

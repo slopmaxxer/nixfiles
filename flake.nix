@@ -46,6 +46,7 @@
       (name: inputs.${name}.nixosModules.default) // {
         slopd = inputs.slop-landing.nixosModules.default;
         hydra = inputs.hydra.nixosModules.hydra;
+        steamlink = inputs.nixos-steamlink.nixosModules.default;
       };
 
     packages = lib.recursiveUpdate (sf.eachSystem (system: platform: let
@@ -125,6 +126,11 @@
     # Soft fork of Lix's Hydra. No `follows`: its own lock keeps store paths equal to the
     # hydra.kyouma.net builds, which cache.kyouma.net serves.
     hydra.url = "git+https://github.com/slopmaxxer/hydra.git";
+    # Valve Steam Link hardware support, kexec boot and USB image (host config/hosts/steamlink)
+    nixos-steamlink = {
+      url = "git+https://github.com/slopmaxxer/nixos-steamlink.git";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # freifick.net static site + slopd (guestbook/counter backend)
     slop-landing = {
       url = "git+https://github.com/slopmaxxer/slop-landing.git";
