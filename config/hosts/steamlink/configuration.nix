@@ -76,6 +76,14 @@
     { type = "ed25519"; path = "/etc/ssh/ssh_host_ed25519_key"; }
   ];
 
+  nixpkgs.overlays = [
+    (final: prev: {
+      # nftables → libpcap → rdma-core, whose cmake cannot find Python when cross-compiling.
+      # No RDMA hardware here anyway.
+      libpcap = prev.libpcap.override { withRdma = false; };
+    })
+  ];
+
   # Receives closures (nixos-rebuild --target-host / colmena), never builds.
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
