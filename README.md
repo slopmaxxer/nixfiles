@@ -29,6 +29,63 @@ are not publicly visible while its GitHub flag is under review).
 - Boot: systemd-boot (30 generations), `panic=30`. OVMF also finds it through the
   ESP's fallback `\EFI\BOOT\BOOTX64.EFI`, so a reset NVRAM still boots NixOS.
 
+## Steam Link (`config/hosts/steamlink`, `modules/steamlink`)
+
+Headless NixOS for the original Valve Steam Link (Marvell Berlin BG2CD, 2× Cortex-A9,
+512 MiB RAM), a NixOS port of [steamlink-debian](https://github.com/djmuted/steamlink-debian).
+It boots from a USB stick and leaves the internal NAND alone; without the stick the
+device starts Valve's firmware as usual.
+
+How it boots: the NAND bootloader only starts Valve-signed kernels, but the stock
+firmware runs `steamlink/factory_test/run.sh` from a USB stick at every boot. On the
+stick's FAT partition that script loads `kexec_load.ko` (the prebuilt module every Steam
+Link port uses, adding `kexec_load` to Valve's 3.8.13 kernel) and runs a static musl
+kexec-tools 2.0.15 (built here; newer versions fail on this kernel) to jump into Linux
+6.18 with the mainline `berlin2cd-valve-steamlink.dtb`. There is no initrd: USB storage
+and ext4 are built in and the kernel mounts `root=PARTUUID=2178694e-02` itself.
+
+- Image: `sd-image.nix`; partition 1 is FAT `FIRMWARE` (256 MiB, mounted at
+  `/boot/firmware`), partition 2 is ext4 `NIXOS_SD`, grown to the whole stick on
+  first boot.
+- Bootloader: `boot.loader.external` runs `install-boot.sh` on every switch. It copies
+  the kernel and DTB of the last 5 generations to `steamlink/nixos/`, writes
+  `steamlink/generations/<n>.sh` for each and `steamlink/factory_test/run.sh` for the
+  default. Each boot leaves `steamlink/boot.log` on the FAT partition.
+- Works: Ethernet (DHCP, `steamlink.local` via Avahi), USB, Wi-Fi/Bluetooth drivers
+  and firmware (no networks configured), nftables firewall, zram swap. Does not work
+  (mainline): HDMI/audio, NAND, DMA, RTC; `reboot`/`poweroff` hang, so power-cycle.
+- Login: `slop` with the keys from `config/users/slop/keys.nix`, passwordless sudo, no
+  passwords. Fresh SSH host keys on first boot.
+- Everything is cross-compiled on x86_64 (no armv7l binary cache). hydra.kyouma.net
+  builds `hydraJobs.steamlink.{toplevel,image}` (project `slop-nixfiles`), so they can
+  be fetched from cache.kyouma.net instead of compiled (about 450 derivations).
+
+Install:
+
+```console
+nix build .#hydraJobs.steamlink.image          # or download it from Hydra
+zstd -d result/sd-image/nixos-steamlink-*.img.zst -o steamlink.img
+sudo dd if=steamlink.img of=/dev/disk/by-id/usb-<the stick> bs=4M conv=fsync status=progress
+```
+
+Plug the stick into the Steam Link and connect Ethernet, then power it on. The stock
+firmware's boot animation stays on screen; NixOS takes ~1 min and then answers on
+`ssh slop@steamlink.local` (or the DHCP address). The first boot also grows the root
+partition and registers the Nix store.
+
+Deploy changes from any x86_64 Nix machine that reaches the Steam Link (it never
+evaluates or builds itself):
+
+```console
+nixos-rebuild switch --flake .#steamlink --target-host slop@steamlink.local --sudo
+```
+
+New kernels are written to the FAT partition by the switch; they take effect at the next
+power cycle. Recovery when a generation does not boot: remove the stick, and on another
+computer copy `steamlink/generations/<n>.sh` over `steamlink/factory_test/run.sh` on its
+FAT partition (or `nixos-rebuild switch --rollback` while it still runs). If nothing
+comes up at all, `steamlink/boot.log` shows what kexec said.
+
 ## Services (`config/services`)
 
 | File | What |

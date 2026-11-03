@@ -14,7 +14,24 @@
     });
 
     nixosConfigurations = sf.mapNixosCfg {
-      hosts = sf.mapHostsMerge ./config/hosts { };
+      hosts = sf.mapHostsMerge ./config/hosts {
+        # Valve Steam Link (armv7l, 512 MiB): cross-compiled here, never built on the box.
+        steamlink = {
+          system = "armv7l-linux";
+          buildSystem = "x86_64-linux";
+        };
+      };
+    };
+
+    # hydra.kyouma.net: armv7l has no binary cache, so the cross-built Steam Link system
+    # and its USB image are built there and served from cache.kyouma.net.
+    hydraJobs = let
+      steamlink = self.nixosConfigurations.steamlink.config.system.build;
+    in {
+      steamlink = {
+        toplevel = steamlink.toplevel;
+        image = steamlink.sdImage;
+      };
     };
 
     overlays = {

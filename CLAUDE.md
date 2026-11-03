@@ -3,11 +3,18 @@
 Follow `/home/slop/CLAUDE.md`; keep this file and README current. AGENTS.md links here.
 Every software project needs a locked Nix flake and applicable reusable NixOS module.
 Never add Co-Authored-By trailers or session links to public GitHub content.
-Development lives on GitHub only (`git push origin main`).
+Development lives on GitHub only (`git push origin main`); origin is
+`slopmaxxer/nixfiles` and application inputs come from `slopmaxxer` copies (the
+`slopinger` repos are hidden from unauthenticated clients). When moving an input, rewrite
+only its URLs in flake.lock (same rev/narHash); `nix flake lock` would also update it.
 
-- The host has one disk, by-id `scsi-0QEMU_QEMU_HARDDISK_drive-scsi1` (`sdX` names are not
+- slopbox has one disk, by-id `scsi-0QEMU_QEMU_HARDDISK_drive-scsi1` (`sdX` names are not
   stable). Host flake attribute and hostname are `slopbox`. See README for the layout and
   services, and its history section for the move from Arch.
+- Second host `steamlink` (Valve Steam Link, armv7l, cross-compiled; `modules/steamlink`,
+  README "Steam Link"). It is not in `checks` (too big for `nix flake check`); hydra.kyouma.net
+  project `slop-nixfiles` builds `hydraJobs.steamlink.*`. Verify with
+  `nix build .#hydraJobs.steamlink.image`. It is on the user's LAN, not reachable from slopbox.
 - Application flakes own their packages/modules. This flake pins public GitHub inputs,
   exposes packages through the overlay, and reexports their NixOS modules. Update input
   locks when changing application revisions; do not maintain duplicate application builds.
