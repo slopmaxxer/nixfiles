@@ -42,7 +42,7 @@
     nixosModules = lib.genAttrs
       (builtins.attrNames (lib.filterAttrs (_: v: v == "directory") (builtins.readDir ./modules)))
       (mod: ./modules/${mod}) // lib.genAttrs
-      [ "trough" "mayfly" "dn42" "driftline" "server-backups" "boybrowse" ]
+      [ "trough" "mayfly" "dn42" "driftline" "server-backups" "boybrowse" "slopcord" ]
       (name: inputs.${name}.nixosModules.default) // {
         slopd = inputs.slop-landing.nixosModules.default;
         hydra = inputs.hydra.nixosModules.hydra;
@@ -134,6 +134,10 @@
     # freifick.net static site + slopd (guestbook/counter backend)
     slop-landing = {
       url = "git+https://github.com/slopmaxxer/slop-landing.git";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    slopcord = {
+      url = "git+https://github.com/slopmaxxer/slopcord.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

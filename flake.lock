@@ -501,6 +501,7 @@
         "nixpkgs": "nixpkgs_3",
         "server-backups": "server-backups",
         "slop-landing": "slop-landing",
+        "slopcord": "slopcord",
         "therapie-mcp": "therapie-mcp",
         "trough": "trough"
       }
@@ -543,6 +544,26 @@
       "original": {
         "type": "git",
         "url": "https://github.com/slopmaxxer/slop-landing.git"
+      }
+    },
+    "slopcord": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1793736615,
+        "narHash": "sha256-SY7h9XmOjAKZfWokFkRZYIUGANHx7oipG+p3OIjYkCs=",
+        "ref": "refs/heads/main",
+        "rev": "8ccb6ce174c7afad2b83f7fe475b6da6c4b9ad1b",
+        "revCount": 2,
+        "type": "git",
+        "url": "https://github.com/slopmaxxer/slopcord.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://github.com/slopmaxxer/slopcord.git"
       }
     },
     "stable": {

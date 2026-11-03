@@ -15,6 +15,7 @@
     ../../services/dn42
     ../../services/docker.nix
     ../../services/agent-tools.nix
+    ../../services/slopcord.nix
     ./disko.nix
     ./hardware-configuration.nix
   ];
