@@ -10,11 +10,11 @@
         "uv2nix": "uv2nix"
       },
       "locked": {
-        "lastModified": 1792242683,
-        "narHash": "sha256-/xMyYAh57W8DaoLiBCo3/Rg1pPVaKwCCqDWaSXTvm24=",
+        "lastModified": 1793734446,
+        "narHash": "sha256-QJWHgLl2lCd4/GYQl8NKwyId+jHnJ5p0tpu6tEArQ80=",
         "ref": "refs/heads/main",
-        "rev": "1d7e967b85b5b3a16c11c004fd701106e11b1564",
-        "revCount": 9,
+        "rev": "605d956d8d21d7205b5dd153f76cca41888ffc44",
+        "revCount": 13,
         "type": "git",
         "url": "https://github.com/slopmaxxer/arbeitsagentur-mcp.git"
       },
@@ -28,11 +28,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1792825081,
-        "narHash": "sha256-JOf45mSXQaqxOlHS9IIGQ0kUGqaxbZDrBmor3fvOh4c=",
+        "lastModified": 1793734448,
+        "narHash": "sha256-yORE+NpWNOikCmBFU9TKy0PbcsuCgT9HZTimj9+aF3I=",
         "ref": "refs/heads/main",
-        "rev": "9f4148df358bae3196434b4503e7eb5b381de1dc",
-        "revCount": 2,
+        "rev": "e9f80d5e5d5a0c2767a99142ef22edfaf61904b2",
+        "revCount": 36,
         "type": "git",
         "url": "https://github.com/slopmaxxer/boybrowse.git"
       },
@@ -111,11 +111,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792242681,
-        "narHash": "sha256-H8ugjBsRBCD3SBNnk+GriLhm00jiufpIqLPeSfJ7DQM=",
+        "lastModified": 1793734448,
+        "narHash": "sha256-T72wfnBdiR8LE37WiAx+b5sdy/PnP6Bwf1J02d+IUsM=",
         "ref": "refs/heads/main",
-        "rev": "3e3bbb2d3a5b07f3657c1d0ff72009fa31beebc8",
-        "revCount": 7,
+        "rev": "26a19dac63bffbece1b8263a7ba85f6da0265531",
+        "revCount": 8,
         "type": "git",
         "url": "https://github.com/slopmaxxer/driftline.git"
       },
@@ -235,11 +235,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793531000,
-        "narHash": "sha256-6cUqFCWQj3x/idj31EGr4gAoRG7y8RTUQBXxIwZ1kww=",
+        "lastModified": 1793734447,
+        "narHash": "sha256-VRDTLqrcgapfJECs00euM5N17o3DyXbLwnHB2A2EZk4=",
         "ref": "refs/heads/main",
-        "rev": "09772e86d109b44ca6f43edc37d25c2b84d29c4e",
-        "revCount": 16,
+        "rev": "41cb19308b5aa5373adba36befcc5a7d0e37dc1a",
+        "revCount": 17,
         "type": "git",
         "url": "https://github.com/slopmaxxer/mayfly.git"
       },
@@ -512,11 +512,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792242041,
-        "narHash": "sha256-C+0D6wbY4BGXxTzeZ3H6cL5bdGPUGcVVqZ9RYuDkOso=",
+        "lastModified": 1793734447,
+        "narHash": "sha256-LumnOEGxAx9ho6Lwbiw7q63IbDo9ofzorzzlmS7JuXM=",
         "ref": "refs/heads/main",
-        "rev": "8dd018d71c716c1a89960a5d32948848db39a804",
-        "revCount": 9,
+        "rev": "245836808832cc63ca22fc29455a8ed5f258e42e",
+        "revCount": 10,
         "type": "git",
         "url": "https://github.com/slopmaxxer/server-backups.git"
       },
@@ -532,11 +532,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792830578,
-        "narHash": "sha256-zBa/CmwKvR5jJQs0PJ+53CMmYOSYv3cG5G7j/7RB+zg=",
+        "lastModified": 1793734448,
+        "narHash": "sha256-cJIairD5dU0GZZLVHLeR2kzDvla4NCSooij5FquFLd4=",
         "ref": "refs/heads/main",
-        "rev": "4bcc95012c8355d2fa425cee0073660d6751a2f8",
-        "revCount": 67,
+        "rev": "ff314e26146dc38480f6a880fad9e9f95d089dd1",
+        "revCount": 69,
         "type": "git",
         "url": "https://github.com/slopmaxxer/slop-landing.git"
       },
@@ -601,11 +601,11 @@
         "uv2nix": "uv2nix_2"
       },
       "locked": {
-        "lastModified": 1792240248,
-        "narHash": "sha256-wNSMSp4J/vcq5ldrodRO6CaUlssAU9CMuclIjihq1Ug=",
+        "lastModified": 1793734446,
+        "narHash": "sha256-z7rTB5QrVtkv8npukjWLDBzRyC0L4YBqQCCHt/IJItY=",
         "ref": "refs/heads/main",
-        "rev": "d18a57287929bb7e738dc5ee54b8c6e7976ee723",
-        "revCount": 11,
+        "rev": "eef2e0bebe5605afd8bc49cae3c43ba16aad85cc",
+        "revCount": 12,
         "type": "git",
         "url": "https://github.com/slopmaxxer/therapie-mcp.git"
       },
@@ -621,11 +621,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792242566,
-        "narHash": "sha256-EDBUkRxo+Xy8GTbEWISXpWYdDen1L0SJvLwc+BoDuLs=",
+        "lastModified": 1793734448,
+        "narHash": "sha256-bn5+XCzRKlkefaIPh9qFKQ1Rpr/FDqTJ7BgIiXUs8W0=",
         "ref": "refs/heads/main",
-        "rev": "15dfa03e0cac3bb8035e54e7e01f64203e860973",
-        "revCount": 192,
+        "rev": "318d2c997954f87628df89f1f78875f931092b1d",
+        "revCount": 193,
         "type": "git",
         "url": "https://github.com/slopmaxxer/trough.git"
       },
