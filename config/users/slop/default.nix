@@ -52,18 +52,19 @@
       '';
     };
 
-    # Commits and tags are signed with an SSH key; GitHub shows them as "Verified".
+    # Commits and tags are signed with an SSH key; GitHub shows them as "Verified". Identity is
+    # the GitHub account slopmaxxer (noreply address + its signing key); slopinger is flagged.
     programs.git = {
       enable = true;
       signing = {
         format = "ssh";
-        key = "~/.ssh/id_ed25519_signing.pub";
+        key = "~/.ssh/id_ed25519_slopmaxxer.pub";
         signByDefault = true;
       };
       settings = {
         user = {
           name = "slop";
-          email = "slopmoder@tutamail.com";
+          email = "351446813+slopmaxxer@users.noreply.github.com";
         };
         gpg.ssh.allowedSignersFile = "~/.ssh/allowed_signers";
         tag.gpgSign = true;
@@ -77,7 +78,9 @@
       enable = true;
       gitCredentialHelper.enable = true;
     };
+    # Current slopmaxxer key, plus the old slopinger key for commits made before 2026-11-03.
     home.file.".ssh/allowed_signers".text = ''
+      351446813+slopmaxxer@users.noreply.github.com namespaces="git" ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGxtm5dPEGNtXFW0mE1RD3I2ukksXTetP7WGHOrDh2xj
       slopmoder@tutamail.com namespaces="git" ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOTofPAGRTdGiTl7oeIWupx4euhHVkR3TyPsECnq2fWJ
     '';
     # Hydra instances for the `hydra` MCP server (github.com/slopmaxxer/hydra-mcp). Only paths to
@@ -109,10 +112,10 @@
         IdentityFile = "~/.ssh/id_ed25519_signing";
         IdentitiesOnly = "yes";
       };
-      # GitHub (account slopinger); project remotes use HTTPS via gh, this is for SSH use
+      # GitHub (account slopmaxxer); project remotes use HTTPS via gh, this is for SSH use
       settings."github.com" = {
         User = "git";
-        IdentityFile = "~/.ssh/id_ed25519_github";
+        IdentityFile = "~/.ssh/id_ed25519_slopmaxxer";
         IdentitiesOnly = "yes";
       };
     };

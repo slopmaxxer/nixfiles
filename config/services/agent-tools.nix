@@ -4,10 +4,10 @@
 # so those paths are kept as links (the Arch github-mcp launcher used ~/.nix-profile, which does
 # not survive the move). uvx/npx servers resolve through PATH.
 { pkgs, ... }: let
-  # GitHub MCP server as slopinger; the token is read at runtime, never stored in Nix.
+  # GitHub MCP server as slopmaxxer; the token is read at runtime, never stored in Nix.
   github-mcp = pkgs.writeShellScriptBin "github-mcp" ''
     set -euo pipefail
-    TOKEN_FILE="/home/slop/.secrets/github/token"
+    TOKEN_FILE="/home/slop/.secrets/github/slopmaxxer-token"
     if [[ ! -r "$TOKEN_FILE" ]]; then
       echo "Error: GitHub token file not found or not readable at $TOKEN_FILE" >&2
       exit 1
