@@ -63,8 +63,10 @@ and ext4 are built in and the kernel mounts `root=PARTUUID=2178694e-02` itself.
 Install:
 
 `packages.<system>.steamlink-image` exists for x86_64-linux (same derivation as Hydra,
-so cache.kyouma.net applies), aarch64-linux and aarch64-darwin (both cross-built from
-scratch; the darwin one only evaluates here and is untested).
+so cache.kyouma.net applies) and aarch64-linux (cross-built from scratch). macOS cannot
+build NixOS systems (hwdb.bin and udev rules run systemd's udevadm on the build machine);
+on a Mac, build the aarch64-linux one through nix-darwin's `linux-builder`, or fetch the
+x86_64-linux one from cache.kyouma.net.
 
 ```console
 nix build .#steamlink-image                    # or download it from Hydra

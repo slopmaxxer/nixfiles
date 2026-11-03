@@ -53,8 +53,10 @@
     in lib.filterAttrs (_: pkg: lib.meta.availableOn platform pkg) (sf.mapPackages pkgs system { })))
       # The Steam Link is cross-compiled anyway, so it can be built from other machines:
       # `nix build .#steamlink-image` on x86_64-linux (same derivations as Hydra, so
-      # cache.kyouma.net applies), aarch64-linux or aarch64-darwin (built from scratch).
-      (lib.genAttrs [ "x86_64-linux" "aarch64-linux" "aarch64-darwin" ] (buildSystem: let
+      # cache.kyouma.net applies) or aarch64-linux (built from scratch; on a Mac through
+      # nix-darwin's linux-builder). Not darwin itself: NixOS runs systemd tools (udevadm
+      # for hwdb.bin) on the build machine.
+      (lib.genAttrs [ "x86_64-linux" "aarch64-linux" ] (buildSystem: let
         host = if buildSystem == "x86_64-linux" then self.nixosConfigurations.steamlink
           else sf.genNixosCfg { hostname = "steamlink"; system = "armv7l-linux"; inherit buildSystem; };
       in {
