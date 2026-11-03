@@ -91,11 +91,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792243747,
-        "narHash": "sha256-FEgn9Ffi9HY9O1EErz4ufD4ixrtWD8vhPRxnBQ7cj+Q=",
+        "lastModified": 1793733737,
+        "narHash": "sha256-KsksXJ0fP4bBiin7stePzdfZxqAOqS5oCC9z8+XF7PY=",
         "ref": "refs/heads/main",
-        "rev": "e4ec3eb6e0182f9130b366fd4a437b7ba0837ba6",
-        "revCount": 43,
+        "rev": "55dda6c825f8d8a9665aa6f736c4aba3c883744e",
+        "revCount": 217,
         "type": "git",
         "url": "https://github.com/slopmaxxer/dn42.git"
       },
