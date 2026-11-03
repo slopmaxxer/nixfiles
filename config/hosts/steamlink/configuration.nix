@@ -76,6 +76,11 @@
     { type = "ed25519"; path = "/etc/ssh/ssh_host_ed25519_key"; }
   ];
 
+  # Building from macOS (packages.aarch64-darwin.steamlink-*): NixOS's user shell assertion
+  # compares against pkgs.zsh, which needs the Linux-only yodl as a build tool. zsh is not
+  # built or installed, it only has to evaluate.
+  nixpkgs.config.allowUnsupportedSystem =
+    (lib.systems.elaborate config.nixpkgs.buildPlatform).isDarwin;
   nixpkgs.overlays = [
     (final: prev: {
       # nftables → libpcap → rdma-core, whose cmake cannot find Python when cross-compiling.

@@ -62,8 +62,12 @@ and ext4 are built in and the kernel mounts `root=PARTUUID=2178694e-02` itself.
 
 Install:
 
+`packages.<system>.steamlink-image` exists for x86_64-linux (same derivation as Hydra,
+so cache.kyouma.net applies), aarch64-linux and aarch64-darwin (both cross-built from
+scratch; the darwin one only evaluates here and is untested).
+
 ```console
-nix build .#hydraJobs.steamlink.image          # or download it from Hydra
+nix build .#steamlink-image                    # or download it from Hydra
 zstd -d result/sd-image/nixos-steamlink-*.img.zst -o steamlink.img
 sudo dd if=steamlink.img of=/dev/disk/by-id/usb-<the stick> bs=4M conv=fsync status=progress
 ```

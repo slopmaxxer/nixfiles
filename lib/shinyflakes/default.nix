@@ -38,6 +38,8 @@
     ];
   };
 in {
+  inherit genNixosCfg;
+
   mapHostsMerge = hdir: extraCfg:
     mergeWith extraCfg (lib.genAttrs
       (builtins.attrNames (lib.filterAttrs (n: t: t == "directory" && n != "_minimal") (builtins.readDir hdir)))
