@@ -31,8 +31,11 @@ are not publicly visible while its GitHub flag is under review).
 
 ## Steam Link (`config/hosts/steamlink`)
 
-Our Valve Steam Link (original model, armv7l, 512 MiB), headless NixOS booted from a USB
-stick. Hardware support, the kexec boot chain and the USB image come from
+Our Valve Steam Link (original model, armv7l, 512 MiB), NixOS booted from a USB stick, as
+an AirPlay receiver on the TV: `hardware.steamlink.video` (nixos-steamlink, experimental:
+the stock firmware's media stack on ported vendor drivers) and `services.steamlink-airplay`
+(flake input `steamlink-airplay`; `journalctl -u steamlink-pe -u steamlink-airplay`). The
+steamlink-airplay package is always the x86_64-linux one (Valve's SDK toolchain). Hardware support, the kexec boot chain and the USB image come from
 [nixos-steamlink](https://github.com/slopmaxxer/nixos-steamlink) (flake input
 `nixos-steamlink`, its README explains boot, limits and recovery); the host file only adds
 our setup: `slop` with the keys from `config/users/slop/keys.nix` and passwordless sudo,

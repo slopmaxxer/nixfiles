@@ -131,6 +131,11 @@
       url = "git+https://github.com/slopmaxxer/nixos-steamlink.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # AirPlay mirroring receiver on the Steam Link's media stack (host config/hosts/steamlink)
+    steamlink-airplay = {
+      url = "git+https://github.com/slopmaxxer/steamlink-airplay.git";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # freifick.net static site + slopd (guestbook/counter backend)
     slop-landing = {
       url = "git+https://github.com/slopmaxxer/slop-landing.git";

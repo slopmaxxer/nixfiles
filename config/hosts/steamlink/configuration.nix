@@ -1,10 +1,12 @@
-# Our Valve Steam Link (original 2015 model), headless, booting NixOS from a USB stick.
+# Our Valve Steam Link (original 2015 model), booting NixOS from a USB stick; an AirPlay
+# receiver on the TV.
 # Hardware support, kexec boot and the USB image come from the nixos-steamlink flake
 # (github:slopmaxxer/nixos-steamlink); this file is only our host setup.
 # Cross-compiled on x86_64 (flake.nix); hydra.kyouma.net builds `hydraJobs.steamlink`.
 { lib, pkgs, inputs, ... }: {
   imports = [
     inputs.nixos-steamlink.nixosModules.default
+    inputs.steamlink-airplay.nixosModules.default
     ../../common/networking.nix
     ../../common/openssh.nix
     ../../../modules
@@ -64,6 +66,15 @@
     automatic = true;
     dates = "weekly";
     options = "--delete-older-than 30d";
+  };
+
+  # HDMI through the stock firmware's media stack on mainline (nixos-steamlink, experimental)
+  # and the AirPlay mirroring receiver on top of it.
+  hardware.steamlink.video.enable = true;
+  services.steamlink-airplay = {
+    enable = true;
+    # Built with Valve's x86_64-only SDK, whatever machine builds the rest.
+    package = inputs.steamlink-airplay.packages.x86_64-linux.default;
   };
 
   environment.systemPackages = with pkgs; [ htop vim ];
