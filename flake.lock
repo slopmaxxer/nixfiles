@@ -1,5 +1,26 @@
 {
   "nodes": {
+    "agenix": {
+      "inputs": {
+        "nixpkgs": [
+          "windows-exploit",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1792507013,
+        "narHash": "sha256-8tKjSQajD3mUND1GaAuaWTcuyUpgcGsh5V+l4ibzC7U=",
+        "owner": "ryantm",
+        "repo": "agenix",
+        "rev": "5e5b88a0c8e56f291a108c2fe9934054d9745b2e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ryantm",
+        "repo": "agenix",
+        "type": "github"
+      }
+    },
     "arbeitsagentur-mcp": {
       "inputs": {
         "nixpkgs": [
@@ -503,7 +524,8 @@
         "slop-landing": "slop-landing",
         "slopcord": "slopcord",
         "therapie-mcp": "therapie-mcp",
-        "trough": "trough"
+        "trough": "trough",
+        "windows-exploit": "windows-exploit"
       }
     },
     "server-backups": {
@@ -703,6 +725,27 @@
         "owner": "pyproject-nix",
         "repo": "uv2nix",
         "type": "github"
+      }
+    },
+    "windows-exploit": {
+      "inputs": {
+        "agenix": "agenix",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1793797977,
+        "narHash": "sha256-hUxZ8zajFpIx6hiuFpq8ynVN6me/ZPwI96037ub6ULg=",
+        "ref": "refs/heads/master",
+        "rev": "265c4ed15dce4799901603caed0063bb11ccd911",
+        "revCount": 17,
+        "type": "git",
+        "url": "https://github.com/slopmaxxer/windows-exploit.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://github.com/slopmaxxer/windows-exploit.git"
       }
     }
   },

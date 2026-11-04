@@ -16,6 +16,7 @@
     ../../services/docker.nix
     ../../services/agent-tools.nix
     ../../services/slopcord.nix
+    ../../services/windows-exploit.nix
     ./disko.nix
     ./hardware-configuration.nix
   ];

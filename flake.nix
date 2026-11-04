@@ -42,7 +42,7 @@
     nixosModules = lib.genAttrs
       (builtins.attrNames (lib.filterAttrs (_: v: v == "directory") (builtins.readDir ./modules)))
       (mod: ./modules/${mod}) // lib.genAttrs
-      [ "trough" "mayfly" "dn42" "driftline" "server-backups" "boybrowse" "slopcord" ]
+      [ "trough" "mayfly" "dn42" "driftline" "server-backups" "boybrowse" "slopcord" "windows-exploit" ]
       (name: inputs.${name}.nixosModules.default) // {
         slopd = inputs.slop-landing.nixosModules.default;
         hydra = inputs.hydra.nixosModules.hydra;
@@ -138,6 +138,11 @@
     };
     slopcord = {
       url = "git+https://github.com/slopmaxxer/slopcord.git";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    # Windows kiosk pwn host: payload server, reverse-shell listener, AirVPN WireGuard
+    windows-exploit = {
+      url = "git+https://github.com/slopmaxxer/windows-exploit.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
