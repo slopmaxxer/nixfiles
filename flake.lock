@@ -735,11 +735,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793797977,
-        "narHash": "sha256-hUxZ8zajFpIx6hiuFpq8ynVN6me/ZPwI96037ub6ULg=",
+        "lastModified": 1793805781,
+        "narHash": "sha256-+u5WSrA5/VG5o622qJlD5IzS0mqWO3Pe0sT3h9Girpw=",
         "ref": "refs/heads/master",
-        "rev": "265c4ed15dce4799901603caed0063bb11ccd911",
-        "revCount": 17,
+        "rev": "52f8b573c6dc03090785c6763e6ac6688843c7af",
+        "revCount": 18,
         "type": "git",
         "url": "https://github.com/slopmaxxer/windows-exploit.git"
       },
