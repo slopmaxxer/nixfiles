@@ -23,6 +23,18 @@ in {
     go gleam beamPackages.erlang beamPackages.rebar3 nodejs uv
     (python3.withPackages (p: [ p.pillow p.websockets p.pip ]))
     gh git-filter-repo sqlite rsync docker-compose
+    # Language servers for Claude Code, Codex, Antigravity, and Pi
+    rust-analyzer
+    gopls
+    pyright
+    clang-tools # clangd
+    typescript-language-server
+    nil
+    bash-language-server
+    lua-language-server
+    yaml-language-server
+    marksman
+    vscode-langservers-extracted
     # MCP servers on PATH (playwright was a global npm package on Arch)
     playwright-mcp therapie-mcp arbeitsagentur-mcp github-mcp
     # Browser automation: headless Chromium, virtual X11 (Xvfb :99 + openbox + scrot + xdotool)
