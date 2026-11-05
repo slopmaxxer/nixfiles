@@ -35,6 +35,11 @@ in {
     yaml-language-server
     marksman
     vscode-langservers-extracted
+    # Code formatters for agents and pi-formatter
+    nixfmt
+    rustfmt
+    shfmt
+    ruff
     # MCP servers on PATH (playwright was a global npm package on Arch)
     playwright-mcp therapie-mcp arbeitsagentur-mcp github-mcp
     # Browser automation: headless Chromium, virtual X11 (Xvfb :99 + openbox + scrot + xdotool)
