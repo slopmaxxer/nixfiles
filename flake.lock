@@ -313,11 +313,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793810941,
-        "narHash": "sha256-ttJerUVfzO4nqQDAEDMObslz1134qNmbGhwK0fliCMw=",
+        "lastModified": 1794057718,
+        "narHash": "sha256-KF5UsVLbvqTxoVUXRp2HlRnE18kr+/5x1RHFBXz5b1s=",
         "ref": "refs/heads/main",
-        "rev": "01939f673c4333bdaa8f943ee93d356fbe02232e",
-        "revCount": 10,
+        "rev": "e68dd2847f93f59b85cb103c7a383f54d4678046",
+        "revCount": 13,
         "type": "git",
         "url": "https://github.com/slopmaxxer/nixos-steamlink.git"
       },
@@ -612,11 +612,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793809194,
-        "narHash": "sha256-xozVvO5jhhalwYTeg3db12AdsHjkhJE8dWy4EzWqZuo=",
+        "lastModified": 1794057718,
+        "narHash": "sha256-0btX7Y81WiipNxenerrQWAdTs+GCt2q3uJ4C6Iat/6k=",
         "ref": "refs/heads/main",
-        "rev": "418c7b3d93fe9e14f64e5f1304291b61ad558643",
-        "revCount": 6,
+        "rev": "f4dd8ef1d340e2cfc84cd2bef81aa4cf137c5e85",
+        "revCount": 8,
         "type": "git",
         "url": "https://github.com/slopmaxxer/steamlink-airplay.git"
       },
