@@ -71,6 +71,9 @@
   # HDMI through the stock firmware's media stack on mainline (nixos-steamlink, experimental)
   # and the AirPlay mirroring receiver on top of it.
   hardware.steamlink.video.enable = true;
+  # Until the media stack runs stably: starting it took the board down (2026-11-07), so SSH
+  # and the logs on the stick (steamlink/nixos-*.log) come up first.
+  hardware.steamlink.video.startDelay = "2min";
   services.steamlink-airplay = {
     enable = true;
     # Built with Valve's x86_64-only SDK, whatever machine builds the rest.
