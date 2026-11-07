@@ -313,11 +313,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794059063,
-        "narHash": "sha256-J1ycN9BmG53gQd4m9IbPZvklH9E6m7gtBK4+gTvp3NM=",
+        "lastModified": 1794062719,
+        "narHash": "sha256-VnBlRii0dmU9ZZN7k7OydY5nqln5VI5wJc6IfSsClyU=",
         "ref": "refs/heads/main",
-        "rev": "e2b15c1386f3cf71bc7a5f248c4cf27745670ed5",
-        "revCount": 14,
+        "rev": "09192af144d8e4f6743e6a1687ce2622c381ee31",
+        "revCount": 17,
         "type": "git",
         "url": "https://github.com/slopmaxxer/nixos-steamlink.git"
       },

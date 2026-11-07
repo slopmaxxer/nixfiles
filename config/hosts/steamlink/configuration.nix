@@ -19,12 +19,8 @@
   freifick.deployment.buildOnTarget = false;
   freifick.deployment.tags = [ "steamlink" ];
 
-  # Ethernet (pxa168_eth) via DHCP, IPv6 via RAs. Wi-Fi/Bluetooth (mwifiex/btmrvl) are off:
-  # once their firmware loaded, the board died about 2 minutes after boot (2026-11-07).
-  boot.blacklistedKernelModules = [
-    "mwifiex_sdio"
-    "btmrvl_sdio"
-  ];
+  # Ethernet (pxa168_eth) via DHCP, IPv6 via RAs. Wi-Fi: mwifiex + firmware are present;
+  # add networking.wireless networks with a runtime secretsFile to use it.
   systemd.network.networks."10-ether" = {
     matchConfig.Type = "ether";
     networkConfig = {
@@ -84,7 +80,13 @@
     package = inputs.steamlink-airplay.packages.x86_64-linux.default;
   };
 
-  environment.systemPackages = with pkgs; [ htop vim ];
+  environment.systemPackages = with pkgs; [
+    htop
+    vim
+    # Without its optional GUI/media libraries (ImageMagick, cairo, ... do not cross-build
+    # and mean nothing on this headless box); fastfetch compiles those features out.
+    (fastfetch-unwrapped.overrideAttrs { buildInputs = [ yyjson ]; })
+  ];
   i18n.defaultLocale = "C.UTF-8";
   i18n.supportedLocales = [ "C.UTF-8/UTF-8" ];
   time.timeZone = "UTC";
