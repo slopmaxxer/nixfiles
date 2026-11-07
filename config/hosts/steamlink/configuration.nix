@@ -86,6 +86,8 @@
     # Without its optional GUI/media libraries (ImageMagick, cairo, ... do not cross-build
     # and mean nothing on this headless box); fastfetch compiles those features out.
     (fastfetch-unwrapped.overrideAttrs { buildInputs = [ yyjson ]; })
+    # Register peek/poke for debugging the media hardware (busybox's, without the rest).
+    (writeShellScriptBin "devmem" ''exec ${busybox}/bin/busybox devmem "$@"'')
   ];
   i18n.defaultLocale = "C.UTF-8";
   i18n.supportedLocales = [ "C.UTF-8/UTF-8" ];
