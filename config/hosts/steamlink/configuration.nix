@@ -19,8 +19,12 @@
   freifick.deployment.buildOnTarget = false;
   freifick.deployment.tags = [ "steamlink" ];
 
-  # Ethernet (pxa168_eth) via DHCP, IPv6 via RAs. Wi-Fi: mwifiex + firmware are present;
-  # add networking.wireless networks with a runtime secretsFile to use it.
+  # Ethernet (pxa168_eth) via DHCP, IPv6 via RAs. Wi-Fi/Bluetooth (mwifiex/btmrvl) are off:
+  # once their firmware loaded, the board died about 2 minutes after boot (2026-11-07).
+  boot.blacklistedKernelModules = [
+    "mwifiex_sdio"
+    "btmrvl_sdio"
+  ];
   systemd.network.networks."10-ether" = {
     matchConfig.Type = "ether";
     networkConfig = {
@@ -73,7 +77,7 @@
   hardware.steamlink.video.enable = true;
   # Until the media stack runs stably: starting it took the board down (2026-11-07), so SSH
   # and the logs on the stick (steamlink/nixos-*.log) come up first.
-  hardware.steamlink.video.startDelay = "2min";
+  hardware.steamlink.video.startDelay = "5min";
   services.steamlink-airplay = {
     enable = true;
     # Built with Valve's x86_64-only SDK, whatever machine builds the rest.
